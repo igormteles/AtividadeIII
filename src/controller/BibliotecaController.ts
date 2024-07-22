@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { BibliotecaService } from "../service/bibliotecaService"; 
+import { BibliotecaService } from "../service/BibliotecaService"; 
 
 const bibliotecaService = new BibliotecaService();
 
@@ -33,7 +33,7 @@ export async function consultarLivros (req: Request, res: Response){
 
 export async function buscaLivro (req: Request, res: Response){
     try {
-        const livro = await bibliotecaService.buscaLivro(req.query.id);
+        const livro = await bibliotecaService.buscaLivro(req.params.id);
         res.status(200).json(
             {
                 mensagem:"Livro encontrado com sucesso!",

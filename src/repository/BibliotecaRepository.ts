@@ -1,5 +1,5 @@
 import { executarComandoSQL } from "../database/mysql";
-import { Livro } from "../model/livro";
+import { Livro } from "../model/Livro";
 
 export class BibliotecaRepository {
     constructor(){
@@ -8,7 +8,7 @@ export class BibliotecaRepository {
 
     private async createTable() {
         const query = `
-        CREATE TABLE IF NOT EXISTS Vendas.Product (
+        CREATE TABLE IF NOT EXISTS biblioteca.livro (
             id INT AUTO_INCREMENT PRIMARY KEY,
             title VARCHAR(255) NOT NULL,
             author VARCHAR(255) NOT NULL,
@@ -28,7 +28,7 @@ export class BibliotecaRepository {
     }
 
     async criarLivro(title: string, author: string, publishedDate: string, isbn: string, pages: number, language: string, publisher: string) :Promise<Livro>{
-        const query = "INSERT INTO biblioteca.livro (title, author, publishedDate, isbn, pages, language, publisher) VALUES (?, ?, ?, ?, ?, ?, ?, ?)" ;
+        const query = "INSERT INTO biblioteca.livro (title, author, publishedDate, isbn, pages, language, publisher) VALUES (?, ?, ?, ?, ?, ?, ?)" ;
 
         try {
             const resultado = await executarComandoSQL(query, [title, author, publishedDate, isbn, pages, language, publisher]);

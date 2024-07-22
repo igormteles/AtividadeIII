@@ -1,5 +1,5 @@
 import  express  from "express";
-import {criarLivro, consultarLivros, buscaLivro, atualizaLivro, excluiLivro} from './controller/bibliotecaController';
+import {criarLivro, consultarLivros, buscaLivro, atualizaLivro, excluiLivro} from './controller/BibliotecaController';
 
 const app = express();
 

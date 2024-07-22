@@ -2,9 +2,9 @@ import mysql, { Connection} from 'mysql2';
 
 const dbConfig = {
     host: 'localhost',
-    port: 33034,
+    port: 3306,
     user: 'root',
-    password: 'mysql',
+    password: 'ifsp',
     database: 'biblioteca'
 };
 

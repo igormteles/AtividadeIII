@@ -1,5 +1,5 @@
-import { Livro } from "../model/livro";
-import { BibliotecaRepository } from "../repository/bibliotecaRepository";
+import { Livro } from "../model/Livro";
+import { BibliotecaRepository } from "../repository/BibliotecaRepository";
 
 export class BibliotecaService {
     bibliotecaRepository: BibliotecaRepository = new BibliotecaRepository
@@ -9,7 +9,6 @@ export class BibliotecaService {
         if(!title || !author || !publishedDate || !isbn || !pages || !language || !publisher ){
             throw new Error("Informações incompletas");
         }
-
         const novoLivro =  await this.bibliotecaRepository.criarLivro(title, author, publishedDate, isbn, pages, language, publisher);
         console.log("Service - Insert ", novoLivro);
         return novoLivro;
